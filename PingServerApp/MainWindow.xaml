@@ -1,0 +1,25 @@
+﻿<Window x:Class="PingServerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PingServerApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="btn1" Content="Start" Click="OnClick1" ClickMode="Press" HorizontalAlignment="Left" Margin="418,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.517,0.658" Height="55" Width="385" Background="Gold"/>
+        <Button Name="btn2" Content="Stop" Click="OnClick2" ClickMode="Press" HorizontalAlignment="Left" Margin="418,70,0,0" VerticalAlignment="Top" Width="390" Height="55" Background="Aqua"/>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding TCPConnectionModel}" Margin="0,0,387,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header = "Started" Binding = "{Binding Started}"/>
+                <DataGridTextColumn Header = "Processed" Binding = "{Binding Processed}" />
+                <DataGridTextColumn Header = "Elapsed?" Binding = "{Binding Elapsed}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StatusBar Margin="413,293,5,10">
+            <StatusBarItem Width="380" Height="69" VerticalAlignment="Bottom" RenderTransformOrigin="0.486,0.619" Margin="0,0,0,21">
+                <TextBlock Text="Nothing yet" x:Name="resultveiw"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
